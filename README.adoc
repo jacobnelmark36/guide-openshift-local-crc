@@ -191,7 +191,7 @@ eval $(minishift oc-env)
 ```
 --
 
-.tab_content.windows_section] 
+[.tab_content.windows_section] 
 --
 [role="no_copy"]
 ----
