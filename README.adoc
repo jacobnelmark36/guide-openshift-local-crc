@@ -40,7 +40,7 @@ Explore how to deploy microservices to Red Hat OpenShift.
 
 == What you'll learn 
 
-You will learn how to deploy two microservices in Open Liberty containers to an OpenShift 4 cluster running locally on your computer.
+You will learn how to deploy two microservices in Open Liberty containers to an OpenShift 4 cluster running locally on your computer using CodeReady containers.
 To learn how to deploy to an OpenShift 4 cluster using operators, see the https://openliberty.io/guides/cloud-openshift-operator.html[Deploying microservices to OpenShift by using Kubernetes Operators^] guide. 
 
 Red Hat CodeReady Containers is the quickest way to get started building OpenShift
@@ -88,7 +88,6 @@ Keep in mind that the creation time depends on resource availability and might t
 - *CodeReady Containers:* You need to install CodeReady Containers (CRC) to run
 OpenShift 4 locally on your computer. For installation instructions refer to the
 official https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.0/html/getting_started_guide/getting-started-with-codeready-containers_gsg[CodeReady Containers documentation].   
-
 
 [role=command]
 ```
