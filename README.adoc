@@ -24,7 +24,7 @@
 [.hidden]
 NOTE: This repository contains the guide documentation source. To view the guide in published form, view it on the https://openliberty.io/guides/{projectid}.html[Open Liberty website^].
 
-Explore how to deploy microservices to Red Hat OpenShift. 
+Explore how to use CodeReady Containers to deploy microservices to Red Hat OpenShift. 
 
 :kube: Kubernetes
 :hashtag: #
@@ -142,7 +142,13 @@ If the cluster started successfully, you should see the following output:
 
 [role="no_copy"]
 ----
-OUTPUT 
+Started the OpenShift cluster
+
+To access the cluster, first set up your environment by following the instructions returned by executing 'crc oc-env'.
+Then you can access your cluster by running 'oc login -u developer -p developer https://api.crc.testing:6443'.
+To login as a cluster admin, run 'oc login -u kubeadmin -p APEEh-jjrVy-hL4Z1-CI9Kj https://api.crc.testing:6443'.
+
+You can also run 'crc console' and use the above credentials to access the OpenShift web console.
 ----
 
 === Logging in to the cluster 
