@@ -6,7 +6,7 @@
 // Contributors:
 //     IBM Corporation
 //
-:projectid: cloud-openshift
+:projectid: okd-crc
 :page-layout: guide-multipane
 :page-duration: 45 minutes 
 :page-releasedate: 2019-09-11
