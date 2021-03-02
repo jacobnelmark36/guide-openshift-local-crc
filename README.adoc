@@ -89,19 +89,6 @@ Keep in mind that the creation time depends on resource availability and might t
 OpenShift 4 locally on your computer. For installation instructions refer to the
 official https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.0/html/getting_started_guide/getting-started-with-codeready-containers_gsg[CodeReady Containers documentation].   
 
-[role=command]
-```
-oc version
-```
-
-The output will be similar to:
-
-[role="no_copy"]
-----
-oc v3.11.0+0cbc58b
-----
-
-
 // =================================================================================================
 // Getting Started
 // =================================================================================================
@@ -138,7 +125,7 @@ When prompted, supply your user pull secret. The pull secret can be found on the
 page where you downloaded the
 https://cloud.redhat.com/openshift/create/local[latest release of CodeReady Containers].
 
-If the cluster started successfully, you should see the following output:
+If the cluster started successfully, you should see something similar to the following output:
 
 [role="no_copy"]
 ----
@@ -193,7 +180,7 @@ Run the appropriate command to configure your environment:
 
 [role=command]
 ```
-eval $(minishift oc-env)
+eval $(crc oc-env)
 ```
 --
 
@@ -216,7 +203,7 @@ Run the following command to log in and gain access to your OpenShift cluster:
 
 [role=command]
 ```
-oc login -u developer -p
+oc login -u developer -p developer
 ```
 
 Next, create a new OpenShift project by running the following command:
@@ -311,7 +298,7 @@ First, you must authenticate your Docker client to your OCR. Start by running th
 
 [role=command]
 ```
-oc registry login
+oc registry login --skip-check
 ```
 
 You can store your Docker credentials in a custom external credential store, which is more secure than using a Docker configuration file. 
@@ -348,7 +335,7 @@ The command authenticates your credentials against the internal registry so that
 The registry address will be displayed after you run the `oc registry login` command. It is formatted similar to the following output:
 [role="no_copy"]
 ----
-default-route-openshift-image-registry.apps.[region].starter.openshift-online.com
+default-route-openshift-image-registry.apps-crc.testing
 ----
 
 You can also view the registry address by running the following command:
@@ -563,13 +550,13 @@ The default properties that are defined in the [hotspot]`pom.xml` file are:
 |===
 
 Use the following command to run the integration tests against your cluster. Substitute 
-`[region]` and `[project-name]` with the appropriate values:
+`[project-name]` with the appropriate value:
 
 [role=command]
 ```
-mvn verify \
--Dsystem.ip=system-route-[project-name].apps.[region].starter.openshift-online.com  \
--Dinventory.ip=inventory-route-[project-name].apps.[region].starter.openshift-online.com
+mvn verify \ 
+-Dsystem.ip=system-route-[project-name].apps-crc.testing \
+-Dinventory.ip=inventory-route-[project-name].apps-crc.testing \
 ```
 
 - The `system.ip` parameter is replaced with the appropriate hostname to access your system microservice.
@@ -625,12 +612,21 @@ oc delete imagestream/inventory
 oc delete imagestream/system
 ```
 
-Finally, you can delete the project by running the following command:
+Next, you can delete the project by running the following command:
 
 [role='command']
 ```
 oc delete project [project-name]
 ```
+
+Finally, you can stop and delete the CRC virtual machine by running the following commands:
+
+[role='command']
+```
+crc stop
+crc delete
+```
+
 
 // =================================================================================================
 // finish
@@ -638,7 +634,7 @@ oc delete project [project-name]
 
 == Great work! You're done!
 
-You just deployed two microservices running in Open Liberty to OpenShift. You also 
+You just deployed two microservices running in Open Liberty to OpenShift using CodeReady Containers. You also 
 learned how to use `oc` to deploy your microservices on a {kube} cluster.
 
 // Multipane
