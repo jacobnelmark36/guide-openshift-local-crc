@@ -79,11 +79,6 @@ For installation instructions, refer to the official https://docs.docker.com/ins
 OpenShift 4 locally on your computer. For installation instructions refer to the
 official https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.0/html/getting_started_guide/getting-started-with-codeready-containers_gsg[CodeReady Containers documentation].   
 
-- *Minimum system requirements:* CodeReady Containers requires the following system resources:
-    ** 4 virtual CPUs (vCPUs)
-    ** 9 GB of free memory
-    ** 35 GB of storage space
-
 // =================================================================================================
 // Getting Started
 // =================================================================================================
@@ -166,7 +161,7 @@ eval $(crc oc-env)
 --
 [role="no_copy"]
 ----
-export PATH="/Users/guidesbot@ibm.com/.bin/oc:$PATH"
+export PATH="/Users/developer/.bin/oc:$PATH"
 # Run this command to configure your shell session:
 # eval $(crc oc-env)
 ----
