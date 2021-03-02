@@ -149,7 +149,7 @@ following command to configure your PATH to include the binary:
 crc oc-env
 ```
 
-The resulting output differs based on your OS and environment, but you get an output similar to the following:
+The resulting output differs based on your OS and environment, but you should get an output similar to the following:
 
 include::{common-includes}/os-tabs.adoc[]
 [.tab_content.linux_section]
@@ -213,7 +213,7 @@ Next, create a new OpenShift project by running the following command:
 oc new-project [project-name]
 ```
 
-You are now ready to build and deploy a microservice.
+You are now ready to build and deploy microservices.
 
 // =================================================================================================
 // Deploying microservices to OpenShift
