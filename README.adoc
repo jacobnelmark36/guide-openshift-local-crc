@@ -509,7 +509,7 @@ oc get routes
 ```
 
 They can also be found in the web console by following the `Networking > Routes > Location` path. 
-Hostnames are in the `inventory-route-[project-name].apps.[region].starter.openshift-online.com` format. Ensure that
+Hostnames are in the `inventory-route-[project-name].apps-crc.testing` format. Ensure that
 you are in your project, not the `default` project, which is shown in the upper-left corner of the web console.
 
 To access your microservices, point your browser to the following URLs. Substitute the appropriate hostnames
