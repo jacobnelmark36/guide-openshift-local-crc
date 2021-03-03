@@ -185,7 +185,7 @@ Run the appropriate command to configure your environment:
 
 [role=command]
 ```
-@FOR /f "tokens=*" %i IN ('minishift oc-env') DO @call %i
+@FOR /f "tokens=*" %i IN ('crc oc-env') DO @call %i
 ```
 --
 
