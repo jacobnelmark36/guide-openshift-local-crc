@@ -546,7 +546,7 @@ Use the following command to run the integration tests against your cluster. Sub
 ```
 mvn verify \ 
 -Dsystem.ip=system-route-[project-name].apps-crc.testing \
--Dinventory.ip=inventory-route-[project-name].apps-crc.testing \
+-Dinventory.ip=inventory-route-[project-name].apps-crc.testing
 ```
 
 - The `system.ip` parameter is replaced with the appropriate hostname to access your system microservice.
