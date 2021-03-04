@@ -196,7 +196,7 @@ Run the following command to log in and gain access to your OpenShift cluster:
 oc login -u developer -p developer
 ```
 
-Next, create a new OpenShift project by running the following command:
+Next, create a new OpenShift project by running the following command. Replace `[project-name]` with a name for your project:
 
 [role=command]
 ```
@@ -290,6 +290,78 @@ First, you must authenticate your Docker client to your OCR. Start by running th
 ```
 oc registry login --skip-check
 ```
+
+In order to use the OpenShift registry with Docker, you must add the registry domain to your Docker Engine's list of insecure registries. 
+
+include::{common-includes}/os-tabs.adoc[]
+
+[.tab_content.mac_section]
+--
+Click the Docker icon in your menu bar, select *Preferences*, and then click *Docker Engine*. If there is an existing JSON object, add the following key/value pair:
+
+[role="command"]
+----
+"insecure-registries": [ "default-route-openshift-image-registry.apps-crc.testing" ]
+----
+
+If there is no existing JSON object, add the following object: 
+
+[role="command"]
+----
+{
+    "insecure-registries": [ "default-route-openshift-image-registry.apps-crc.testing" ]
+}
+----
+
+Next, press the *Apply & Restart* button for the the changes to take effect. 
+--
+
+[.tab_content.windows_section]
+--
+Click the Docker icon in your system tray, select *Settings*, and then click *Docker Engine*. If there is an existing JSON object, add the following key/value pair:
+
+[role="command"]
+----
+"insecure-registries": [ "default-route-openshift-image-registry.apps-crc.testing" ]
+----
+
+If there is no existing JSON object, add the following object: 
+
+[role="command"]
+----
+{
+    "insecure-registries": [ "default-route-openshift-image-registry.apps-crc.testing" ]
+}
+----
+
+Next, press the *Apply & Restart* button for the the changes to take effect. 
+--
+
+[.tab_content.mac_section.linux_section]
+--
+
+Open the `/etc/docker/daemon.json` file or create it if it doesn't already exist. 
+
+If the file already contains a JSON object add the following key/value pair: 
+
+[role="command"]
+----
+"insecure-registries": [ "default-route-openshift-image-registry.apps-crc.testing" ]
+----
+
+If the file doesn't already contain a JSON object, add the following objet:
+
+[role="command"]
+----
+{
+    "insecure-registries": [ "default-route-openshift-image-registry.apps-crc.testing" ]
+}
+----
+
+Next, restart Docker for the changes to take effect.
+--
+
+To learn more about testing insecure registries, check out the official https://docs.docker.com/registry/insecure/[Docker documentation] on it. 
 
 You can store your Docker credentials in a custom external credential store, which is more secure than using a Docker configuration file. 
 If you are using a custom credential store for securing your registry credentials, or if you are unsure where your credentials are stored, use the following command:
