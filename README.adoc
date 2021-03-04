@@ -344,9 +344,7 @@ To learn more about testing insecure registries, check out this related official
 [.tab_content.linux_section]
 --
 
-Open the `/etc/docker/daemon.json` file or create it if it doesn't already exist. 
-
-If the file already contains a JSON object add the following key/value pair: 
+Open the `/etc/docker/daemon.json` file or create it if it doesn't already exist. If the file already contains a JSON object, add the following key/value pair: 
 
 [role="command"]
 ----
