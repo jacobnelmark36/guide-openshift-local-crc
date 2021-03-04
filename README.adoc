@@ -304,7 +304,7 @@ Click the Docker icon in your menu bar, select *Preferences*, and then click *Do
 "insecure-registries": ["default-route-openshift-image-registry.apps-crc.testing"]
 ----
 
-If there is no existing JSON object, add the following object: 
+If there is no existing JSON object, instead add the following object: 
 
 [role="command"]
 ----
@@ -313,7 +313,9 @@ If there is no existing JSON object, add the following object:
 }
 ----
 
-Next, press the *Apply & Restart* button for the the changes to take effect. 
+Next, press the *Apply & Restart* button for the the changes to take effect.
+
+To learn more about testing insecure registries, check out this related official https://docs.docker.com/registry/insecure/[Docker documentation]. 
 --
 
 [.tab_content.windows_section]
@@ -325,7 +327,7 @@ Click the Docker icon in your system tray, select *Settings*, and then click *Do
 "insecure-registries": ["default-route-openshift-image-registry.apps-crc.testing"]
 ----
 
-If there is no existing JSON object, add the following object: 
+If there is no existing JSON object, instead add the following object: 
 
 [role="command"]
 ----
@@ -335,6 +337,8 @@ If there is no existing JSON object, add the following object:
 ----
 
 Next, press the *Apply & Restart* button for the the changes to take effect. 
+
+To learn more about testing insecure registries, check out this related official https://docs.docker.com/registry/insecure/[Docker documentation]. 
 --
 
 [.tab_content.linux_section]
@@ -349,7 +353,7 @@ If the file already contains a JSON object add the following key/value pair:
 "insecure-registries": ["default-route-openshift-image-registry.apps-crc.testing"]
 ----
 
-If the file doesn't already contain a JSON object, add the following objet:
+If the file doesn't already contain a JSON object, instead add the following object:
 
 [role="command"]
 ----
@@ -359,9 +363,9 @@ If the file doesn't already contain a JSON object, add the following objet:
 ----
 
 Next, restart Docker for the changes to take effect.
---
 
-To learn more about testing insecure registries, check out the official https://docs.docker.com/registry/insecure/[Docker documentation] on it. 
+To learn more about testing insecure registries, check out this related official https://docs.docker.com/registry/insecure/[Docker documentation]. 
+--
 
 You can store your Docker credentials in a custom external credential store, which is more secure than using a Docker configuration file. 
 If you are using a custom credential store for securing your registry credentials, or if you are unsure where your credentials are stored, use the following command:
