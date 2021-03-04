@@ -301,7 +301,7 @@ Click the Docker icon in your menu bar, select *Preferences*, and then click *Do
 
 [role="command"]
 ----
-"insecure-registries": [ "default-route-openshift-image-registry.apps-crc.testing" ]
+"insecure-registries": ["default-route-openshift-image-registry.apps-crc.testing"]
 ----
 
 If there is no existing JSON object, add the following object: 
@@ -309,7 +309,7 @@ If there is no existing JSON object, add the following object:
 [role="command"]
 ----
 {
-    "insecure-registries": [ "default-route-openshift-image-registry.apps-crc.testing" ]
+  "insecure-registries": ["default-route-openshift-image-registry.apps-crc.testing"]
 }
 ----
 
@@ -322,7 +322,7 @@ Click the Docker icon in your system tray, select *Settings*, and then click *Do
 
 [role="command"]
 ----
-"insecure-registries": [ "default-route-openshift-image-registry.apps-crc.testing" ]
+"insecure-registries": ["default-route-openshift-image-registry.apps-crc.testing"]
 ----
 
 If there is no existing JSON object, add the following object: 
@@ -330,14 +330,14 @@ If there is no existing JSON object, add the following object:
 [role="command"]
 ----
 {
-    "insecure-registries": [ "default-route-openshift-image-registry.apps-crc.testing" ]
+  "insecure-registries": ["default-route-openshift-image-registry.apps-crc.testing"]
 }
 ----
 
 Next, press the *Apply & Restart* button for the the changes to take effect. 
 --
 
-[.tab_content.mac_section.linux_section]
+[.tab_content.linux_section]
 --
 
 Open the `/etc/docker/daemon.json` file or create it if it doesn't already exist. 
@@ -346,7 +346,7 @@ If the file already contains a JSON object add the following key/value pair:
 
 [role="command"]
 ----
-"insecure-registries": [ "default-route-openshift-image-registry.apps-crc.testing" ]
+"insecure-registries": ["default-route-openshift-image-registry.apps-crc.testing"]
 ----
 
 If the file doesn't already contain a JSON object, add the following objet:
@@ -354,7 +354,7 @@ If the file doesn't already contain a JSON object, add the following objet:
 [role="command"]
 ----
 {
-    "insecure-registries": [ "default-route-openshift-image-registry.apps-crc.testing" ]
+  "insecure-registries": ["default-route-openshift-image-registry.apps-crc.testing"]
 }
 ----
 
