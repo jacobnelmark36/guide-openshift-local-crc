@@ -146,7 +146,9 @@ include::{common-includes}/os-tabs.adoc[]
 --
 [role="no_copy"]
 ----
-TODO
+export PATH="/Users/developer/.bin/oc:$PATH"
+# Run this command to configure your shell session:
+# eval $(crc oc-env)
 ----
 
 Run the appropriate command to configure your environment:
@@ -178,7 +180,9 @@ eval $(crc oc-env)
 --
 [role="no_copy"]
 ----
-TODO
+SET PATH=C:\Users\JAMIEColeman\.crc\bin\oc;%PATH%
+REM Run this command to configure your shell:
+REM     @FOR /f "tokens=*" %i IN ('crc oc-env') DO @call %i
 ----
 
 Run the appropriate command to configure your environment:
