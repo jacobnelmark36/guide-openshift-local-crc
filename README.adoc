@@ -168,7 +168,7 @@ export PATH="/Users/developer/.bin/oc:$PATH"
 # eval $(crc oc-env)
 ----
 
-Run the appropriate command to configure your environment:
+Run the appropriate command specified in the output to configure your environment:
 
 [role=command]
 ```
@@ -185,7 +185,7 @@ REM Run this command to configure your shell:
 REM     @FOR /f "tokens=*" %i IN ('crc oc-env') DO @call %i
 ----
 
-Run the appropriate command to configure your environment:
+Run the appropriate command specified in the output to configure your environment:
 
 [role=command]
 ```
