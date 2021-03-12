@@ -1,4 +1,4 @@
-// Copyright (c) 2019, 2020 IBM Corporation and others.
+// Copyright (c) 2019, 2021 IBM Corporation and others.
 // Licensed under Creative Commons Attribution-NoDerivatives
 // 4.0 International (CC BY-ND 4.0)
 //   https://creativecommons.org/licenses/by-nd/4.0/
@@ -40,7 +40,7 @@ Explore how to deploy microservices to a local OpenShift cluster running with Co
 
 == What you'll learn 
 
-You will learn how to deploy two microservices in Open Liberty containers to an OpenShift 4 cluster running locally on your computer using CodeReady containers.
+You will learn how to deploy two microservices in Open Liberty containers to an OpenShift 4 cluster running locally on your computer using CodeReady Containers.
 To learn how to deploy to an OpenShift 4 cluster using operators, see the https://openliberty.io/guides/cloud-openshift-operator.html[Deploying microservices to OpenShift by using Kubernetes Operators^] guide. 
 
 There are different cloud-based solutions for running your {kube} workloads. 
@@ -54,7 +54,7 @@ Red Hat CodeReady Containers is a tool that allows you to quickly build and run
 a minimal OpenShift 4 cluster on your local computer. This simplifies setup 
 and testing while providing all of tools needed to develop container-based
 applications. To read more about CodeReady Containers, check out the
-https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.0/html/getting_started_guide/getting-started-with-codeready-containers_gsg[official
+https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.23/html/getting_started_guide/index[official
 documentation].
 
 The two microservices you will deploy are called `system` and `inventory`. 
@@ -73,11 +73,11 @@ Before you begin, the following additional tools need to be installed:
 
 - *Docker:* You need a containerization software for building containers. 
 Kubernetes supports various container types, but you will use Docker in this guide. 
-For installation instructions, refer to the official https://docs.docker.com/install/[Docker documentation^].
+For installation instructions, refer to the official https://docs.docker.com/get-docker/[Docker documentation^].
 
 - *CodeReady Containers:* You need to install CodeReady Containers (CRC) to run
 OpenShift 4 locally on your computer. For installation instructions refer to the
-official https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.0/html/getting_started_guide/getting-started-with-codeready-containers_gsg[CodeReady Containers documentation].   
+official https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.23/html/getting_started_guide/installation_gsg[CodeReady Containers documentation].   
 
 // =================================================================================================
 // Getting Started
@@ -254,9 +254,6 @@ docker build -t system:1.0-SNAPSHOT system/.
 docker build -t inventory:1.0-SNAPSHOT inventory/.
 ```
 
-The `-t` flag in the `docker build` command allows the Docker image to be labeled (tagged) in the `name[:tag]` format. 
-The tag for an image describes the specific image version. If the optional `[:tag]` tag is not specified, the `latest` tag is created by default.
-
 During the build, you see various Docker messages that describe what images are being downloaded and
 built. When the build finishes, run the following command to list all local Docker images:
 
@@ -288,14 +285,14 @@ In order to run the microservices on the cluster, you need to push the microserv
 You will use OpenShift's integrated container image registry called OpenShift Container Registry (OCR). 
 After your images are pushed into the registry, you can use them in the pods you create later in the guide.
 
-First, you must authenticate your Docker client to your OCR. Start by running the login command:
+Run the login command to authenticate your Docker client to your OCR.:
 
 [role=command]
 ```
 oc registry login --skip-check
 ```
 
-In order to use the OpenShift registry with Docker, you must add the registry domain to your Docker Engine's list of insecure registries. 
+Add the OpenShift registry domain to your Docker Engine's list of insecure registries to use it.
 
 include::{common-includes}/os-tabs.adoc[]
 
@@ -399,18 +396,22 @@ docker login -u [oc whoami] -p [oc whoami -t] [oc registry info]
 ```
 --
 
-The command authenticates your credentials against the internal registry so that you are able to push and pull images. 
-The registry address will be displayed after you run the `oc registry login` command. It is formatted similar to the following output:
-[role="no_copy"]
-----
-default-route-openshift-image-registry.apps-crc.testing
-----
+This command authenticates your credentials against the internal registry so that
+you are able to push and pull images.
 
-You can also view the registry address by running the following command:
+You can view the registry address by running the following command:
+
 [role=command]
 ```
 oc registry info
 ```
+
+The output is similar to the following:
+
+[role="no_copy"]
+----
+default-route-openshift-image-registry.apps-crc.testing
+----
 
 Ensure that you are logged in to OpenShift and the registry, and run the following commands to tag your applications:
 
@@ -496,8 +497,7 @@ Now that your container images are built, deploy them by using a Kubernetes obje
 
 {kube} objects can be configured in a YAML file that contains a description of all your 
 deployments, services, or any other objects that you want to deploy. All objects can 
-also be deleted from the cluster by using the same YAML file that you used to deploy them.
-The [hotspot]`kubernetes.yaml` object configuration file is provided for you. If you are interested 
+also be deleted from the cluster by using the same YAML file that you used to deploy them. If you are interested 
 in learning more about using and configuring Kubernetes clusters, check out the 
 https://openliberty.io/guides/kubernetes-intro.html[Deploying microservices to Kubernetes^]
 guide.
@@ -556,7 +556,7 @@ inventory-deployment-645767664f-nbtd9   1/1       Running   0          15s
 
 == Making requests to the microservices
 
-To access the services and the application, use a route. A route in OpenShift exposes a service at 
+Routes are used to access the services and the application. A route in OpenShift exposes a service at 
 a hostname such as `www.your-web-app.com` so external users can access the application. 
 
 kubernetes.yaml
@@ -579,7 +579,7 @@ They can also be found in the web console by following the `Networking > Routes 
 Hostnames are in the `inventory-route-my-project.apps-crc.testing` format. Ensure that
 you are in your project, not the `default` project, which is shown in the upper-left corner of the web console.
 
-To access your microservices, point your browser to the following URLs. Substitute the appropriate hostnames
+Enter the following URLs into your web browser to access your microservices. Substitute the appropriate hostnames
 for the `system` and `inventory` services:
 
 - `http://[system-hostname]/system/properties/`
@@ -628,7 +628,7 @@ mvn verify \
 - The `system.ip` parameter is replaced with the appropriate hostname to access your system microservice.
 - The `inventory.ip` parameter is replaced with the appropriate hostname to access your inventory microservice.
 
-If the tests pass, you see an output for each service similar to the following example:
+If the tests pass, you see an output for each service similar to the following examples:
 
 [source, role="no_copy"]
 ----
