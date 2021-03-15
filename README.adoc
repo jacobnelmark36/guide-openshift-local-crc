@@ -40,7 +40,7 @@ Explore how to deploy microservices to a local OpenShift cluster running with Co
 
 == What you'll learn 
 
-You will learn how to deploy two microservices in Open Liberty containers to an OpenShift 4 cluster running locally on your computer using CodeReady Containers.
+You'll learn how to deploy two microservices in Open Liberty containers to an OpenShift 4 cluster running locally on your computer using CodeReady Containers.
 To learn how to deploy to an OpenShift 4 cluster using operators, see the https://openliberty.io/guides/cloud-openshift-operator.html[Deploying microservices to OpenShift by using Kubernetes Operators^] guide. 
 
 There are different cloud-based solutions for running your {kube} workloads. 
@@ -57,7 +57,7 @@ applications. To read more about CodeReady Containers, check out the
 https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.23/html/getting_started_guide/index[official
 documentation].
 
-The two microservices you will deploy are called `system` and `inventory`. 
+The two microservices you'll deploy are called `system` and `inventory`. 
 The `system` microservice returns the JVM system properties of the running container. 
 It also returns the pod’s name in the HTTP header, making replicas easy to distinguish 
 from each other. The `inventory` microservice adds the properties from the `system` microservice 
@@ -72,7 +72,7 @@ to the inventory. This process demonstrates how communication can be established
 Before you begin, the following additional tools need to be installed:
 
 - *Docker:* You need a containerization software for building containers. 
-Kubernetes supports various container types, but you will use Docker in this guide. 
+Kubernetes supports various container types, but you'll use Docker in this guide. 
 For installation instructions, refer to the official https://docs.docker.com/get-docker/[Docker documentation^].
 
 - *CodeReady Containers:* You need to install CodeReady Containers (CRC) to run
@@ -197,7 +197,7 @@ Run the following command to log in and gain access to your OpenShift cluster:
 
 [role=command]
 ```
-oc login -u developer -p developer
+oc login -u developer -p developer https://api.crc.testing:6443
 ```
 
 Next, create a new OpenShift project with the name `my-project` by running the following command:
@@ -207,7 +207,7 @@ Next, create a new OpenShift project with the name `my-project` by running the f
 oc new-project my-project
 ```
 
-You are now ready to build and deploy microservices.
+You're now ready to build and deploy microservices.
 
 // =================================================================================================
 // Deploying microservices to OpenShift
@@ -215,8 +215,8 @@ You are now ready to build and deploy microservices.
 
 == Deploying microservices to OpenShift
 
-In this section, you will learn how to deploy two microservices in Open Liberty containers to a {kube}
-cluster on OpenShift. You will build and containerize the `system` and `inventory` microservices, 
+In this section, you'll learn how to deploy two microservices in Open Liberty containers to a {kube}
+cluster on OpenShift. You'll build and containerize the `system` and `inventory` microservices, 
 push them to a container registry, and then deploy them to your {kube} cluster. 
 
 // =================================================================================================
@@ -282,7 +282,7 @@ build log for any potential errors.
 === Pushing the images to OpenShift's internal registry
 
 In order to run the microservices on the cluster, you need to push the microservice images into a container image registry. 
-You will use OpenShift's integrated container image registry called OpenShift Container Registry (OCR). 
+You'll use OpenShift's integrated container image registry called OpenShift Container Registry (OCR). 
 After your images are pushed into the registry, you can use them in the pods you create later in the guide.
 
 Run the login command to authenticate your Docker client to your OCR.:
@@ -298,14 +298,14 @@ include::{common-includes}/os-tabs.adoc[]
 
 [.tab_content.mac_section]
 --
-Click the Docker icon in your menu bar, select *Preferences*, and then click *Docker Engine*. If there is an existing JSON object, add the following key/value pair:
+Click the Docker icon in your menu bar, select *Preferences*, and then click *Docker Engine*. If there's an existing JSON object, add the following key/value pair:
 
 [role="command"]
 ----
 "insecure-registries": ["default-route-openshift-image-registry.apps-crc.testing"]
 ----
 
-If there is no existing JSON object, instead add the following object: 
+If there's no existing JSON object, instead add the following object: 
 
 [role="command"]
 ----
@@ -321,14 +321,14 @@ To learn more about testing insecure registries, check out this related official
 
 [.tab_content.windows_section]
 --
-Click the Docker icon in your system tray, select *Settings*, and then click *Docker Engine*. If there is an existing JSON object, add the following key/value pair:
+Click the Docker icon in your system tray, select *Settings*, and then click *Docker Engine*. If there's an existing JSON object, add the following key/value pair:
 
 [role="command"]
 ----
 "insecure-registries": ["default-route-openshift-image-registry.apps-crc.testing"]
 ----
 
-If there is no existing JSON object, instead add the following object: 
+If there's no existing JSON object, instead add the following object: 
 
 [role="command"]
 ----
@@ -367,7 +367,7 @@ To learn more about testing insecure registries, check out this related official
 --
 
 You can store your Docker credentials in a custom external credential store, which is more secure than using a Docker configuration file. 
-If you are using a custom credential store for securing your registry credentials, or if you are unsure where your credentials are stored, use the following command:
+If you're using a custom credential store for securing your registry credentials, or if you're unsure where your credentials are stored, use the following command:
 
 include::{common-includes}/os-tabs.adoc[]
 
@@ -397,7 +397,7 @@ docker login -u [oc whoami] -p [oc whoami -t] [oc registry info]
 --
 
 This command authenticates your credentials against the internal registry so that
-you are able to push and pull images.
+you're able to push and pull images.
 
 You can view the registry address by running the following command:
 
@@ -413,7 +413,7 @@ The output is similar to the following:
 default-route-openshift-image-registry.apps-crc.testing
 ----
 
-Ensure that you are logged in to OpenShift and the registry, and run the following commands to tag your applications:
+Ensure that you're logged in to OpenShift and the registry, and run the following commands to tag your applications:
 
 include::{common-includes}/os-tabs.adoc[]
 
@@ -497,7 +497,7 @@ Now that your container images are built, deploy them by using a Kubernetes obje
 
 {kube} objects can be configured in a YAML file that contains a description of all your 
 deployments, services, or any other objects that you want to deploy. All objects can 
-also be deleted from the cluster by using the same YAML file that you used to deploy them. If you are interested 
+also be deleted from the cluster by using the same YAML file that you used to deploy them. If you're interested 
 in learning more about using and configuring Kubernetes clusters, check out the 
 https://openliberty.io/guides/kubernetes-intro.html[Deploying microservices to Kubernetes^]
 guide.
@@ -577,7 +577,7 @@ oc get routes
 
 They can also be found in the web console by following the `Networking > Routes > Location` path. 
 Hostnames are in the `inventory-route-my-project.apps-crc.testing` format. Ensure that
-you are in your project, not the `default` project, which is shown in the upper-left corner of the web console.
+you're in your project, not the `default` project, which is shown in the upper-left corner of the web console.
 
 Enter the following URLs into your web browser to access your microservices. Substitute the appropriate hostnames
 for the `system` and `inventory` services:
