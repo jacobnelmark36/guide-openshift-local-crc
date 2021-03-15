@@ -2,7 +2,7 @@ name: Test application
 
 on:
   pull_request:
-    branches: [master, qa, draft]
+    branches: [draft]
 
 jobs:
   check-files:
