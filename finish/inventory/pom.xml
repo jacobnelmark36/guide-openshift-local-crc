@@ -18,10 +18,10 @@
         <https.port>9443</https.port>
         <!-- Default test properties -->
         <!-- tag::systemIP[] -->
-        <system.ip>localhost:9090</system.ip>
+        <system.ip>localhost:9080</system.ip>
         <!-- end::systemIP[] -->
         <!-- tag::inventoryIP[] -->
-        <inventory.ip>localhost:9080</inventory.ip>
+        <inventory.ip>localhost:8080</inventory.ip>
         <!-- end::inventoryIP[] -->
     </properties>
 
@@ -121,7 +121,6 @@
                     </execution>
                 </executions>
             </plugin>
-
         </plugins>
     </build>
 </project>
