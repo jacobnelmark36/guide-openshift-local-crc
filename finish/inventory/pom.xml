@@ -14,8 +14,8 @@
         <maven.compiler.source>1.8</maven.compiler.source>
         <maven.compiler.target>1.8</maven.compiler.target>
         <!-- OpenLiberty runtime -->
-        <http.port>9080</http.port>
-        <https.port>9443</https.port>
+        <http.port>8080</http.port>
+        <https.port>8443</https.port>
         <!-- Default test properties -->
         <!-- tag::systemIP[] -->
         <system.ip>localhost:9080</system.ip>
