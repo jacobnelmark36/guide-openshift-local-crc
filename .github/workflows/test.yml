@@ -26,9 +26,14 @@ jobs:
         uses: github/super-linter@v3
         env:
           VALIDATE_ALL_CODEBASE: false
+          VALIDATE_JAVA: true
+          VALIDATE_YAML: true
+          VALIDATE_DOCKER: true
+          VALIDATE_BASH: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LINTER_RULES_PATH: ./tools/pr-checker/linters/
           DEFAULT_BRANCH: draft
+          
       - name: Summary
         if: always()
         run: |
