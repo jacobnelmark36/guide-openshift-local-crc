@@ -39,8 +39,8 @@ jobs:
             
   test-app:
     runs-on: ubuntu-latest
-    # needs: [check-files]
-    # if: "!contains(needs.check-files.outputs.canSkip, 'true')"
+    needs: [check-files]
+    if: "!contains(needs.check-files.outputs.canSkip, 'true')"
     env:
       CHANGE_MINIKUBE_NONE_USER: true
     defaults:
