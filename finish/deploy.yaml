@@ -73,7 +73,7 @@ spec:
         image: [image-link]
         # end::inventoryImage[]
         ports:
-        - containerPort: 9080
+        - containerPort: 8080
 ---
 apiVersion: v1
 kind: Service
@@ -84,7 +84,7 @@ spec:
     app: inventory
   ports:
   - protocol: TCP
-    port: 9080
+    port: 8080
 ---
 apiVersion: v1
 kind: Route

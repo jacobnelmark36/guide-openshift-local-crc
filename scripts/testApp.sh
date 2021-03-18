@@ -1,13 +1,29 @@
 #!/bin/bash
 set -euxo pipefail
 
-# Package the system/ and inventory/ apps
-mvn -q -pl models install
-mvn -q clean package
+##############################################################################
+##
+##  GH actions CI test script
+##
+##############################################################################
 
-# Verifies that the system/inventory apps are functional
-mvn -pl system verify
-mvn -pl inventory verify
+# LMP 3.0+ goals are listed here: https://github.com/OpenLiberty/ci.maven#goals
+export HOSTNAME=localhost
 
-# Delete m2 cache after completion
-rm -rf ~/.m2
+
+## Rebuild the application
+mvn -q clean package 
+mvn -pl system liberty:create 
+mvn -pl system liberty:install-feature 
+mvn -pl system liberty:deploy
+
+mvn -pl inventory liberty:create 
+mvn -pl inventory liberty:install-feature 
+mvn -pl inventory liberty:deploy
+
+## Run the tests
+mvn -pl system liberty:start
+mvn -pl inventory liberty:start
+mvn verify -Dsystem.ip=localhost:9080 -Dinventory.ip=localhost:8080 
+mvn -pl system liberty:stop 
+mvn -pl inventory liberty:stop

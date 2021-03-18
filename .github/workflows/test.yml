@@ -2,7 +2,7 @@ name: Test application
 
 on:
   pull_request:
-    branches: [master, qa]
+    branches: [draft]
 
 jobs:
   check-files:
@@ -26,8 +26,14 @@ jobs:
         uses: github/super-linter@v3
         env:
           VALIDATE_ALL_CODEBASE: false
+          VALIDATE_JAVA: true
+          VALIDATE_YAML: true
+          VALIDATE_DOCKER: true
+          VALIDATE_BASH: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           LINTER_RULES_PATH: ./tools/pr-checker/linters/
+          DEFAULT_BRANCH: draft
+          
       - name: Summary
         if: always()
         run: |
@@ -35,6 +41,7 @@ jobs:
             cat ./super-linter.log | sed -n '/.*The script has completed.*/,$p' | tail -n +4 | sed  's/.*\(\[[A-Z]\+\]\)/\1/'
             echo "====== Examine logs in Checker and Super-Linter steps for more details ======"
             if [ '${{ steps.Checker.outcome }}' != 'success' ] || [ '${{ steps.Lint-Code-Base.outcome }}' != 'success' ]; then exit 1; fi
+            
   test-app:
     runs-on: ubuntu-latest
     needs: [check-files]
