@@ -71,11 +71,11 @@ to the inventory. This process demonstrates how communication can be established
 
 Before you begin, the following additional tools need to be installed:
 
-- *Docker:* You need a containerization software for building containers. 
+* *Docker:* You need a containerization software for building containers. 
 Kubernetes supports various container types, but you'll use Docker in this guide. 
 For installation instructions, refer to the official https://docs.docker.com/get-docker/[Docker documentation^].
 
-- *CodeReady Containers:* You need to install CodeReady Containers (CRC) to run
+* *CodeReady Containers:* You need to install CodeReady Containers (CRC) to run
 OpenShift 4 locally on your computer. For installation instructions refer to the
 official https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.23/html/getting_started_guide/installation_gsg[CodeReady Containers documentation].   
 
@@ -119,13 +119,22 @@ If the cluster started successfully, you should see something similar to the fol
 
 [role="no_copy"]
 ----
-Started the OpenShift cluster
+Started the OpenShift cluster.
 
-To access the cluster, first set up your environment by following the instructions returned by executing 'crc oc-env'.
-Then you can access your cluster by running 'oc login -u developer -p developer https://api.crc.testing:6443'.
-To login as a cluster admin, run 'oc login -u kubeadmin -p APEEh-jjrVy-hL4Z1-CI9Kj https://api.crc.testing:6443'.
+The server is accessible via web console at:
+  https://console-openshift-console.apps-crc.testing
 
-You can also run 'crc console' and use the above credentials to access the OpenShift web console.
+Log in as administrator:
+  Username: kubeadmin
+  Password: jPvDv-jgRZB-qhYP4-Hmkmj
+
+Log in as user:
+  Username: developer
+  Password: developer
+
+Use the 'oc' command line interface:
+  $ eval $(crc oc-env)
+  $ oc login -u developer https://api.crc.testing:6443
 ----
 
 === Logging in to the cluster 
@@ -197,7 +206,7 @@ Run the following command to log in and gain access to your OpenShift cluster:
 
 [role=command]
 ```
-oc login -u developer -p developer https://api.crc.testing:6443
+oc login -u developer https://api.crc.testing:6443
 ```
 
 Next, create a new OpenShift project with the name `my-project` by running the following command:
@@ -582,8 +591,8 @@ you're in your project, not the `default` project, which is shown in the upper-l
 Enter the following URLs into your web browser to access your microservices. Substitute the appropriate hostnames
 for the `system` and `inventory` services:
 
-- `http://[system-hostname]/system/properties/`
-- `http://[inventory-hostname]/inventory/systems`
+* `http://[system-hostname]/system/properties/`
+* `http://[inventory-hostname]/inventory/systems`
 
 In the first URL, you see a result in JSON format with the system properties of the container JVM. The second URL returns an empty list, 
 which is expected because no system properties are stored in the inventory yet.
@@ -624,9 +633,8 @@ mvn verify \
 -Dsystem.ip=system-route-my-project.apps-crc.testing \
 -Dinventory.ip=inventory-route-my-project.apps-crc.testing
 ```
-
-- The `system.ip` parameter is replaced with the appropriate hostname to access your system microservice.
-- The `inventory.ip` parameter is replaced with the appropriate hostname to access your inventory microservice.
+* The `system.ip` parameter is replaced with the appropriate hostname to access your system microservice.
+* The `inventory.ip` parameter is replaced with the appropriate hostname to access your inventory microservice.
 
 If the tests pass, you see an output for each service similar to the following examples:
 
