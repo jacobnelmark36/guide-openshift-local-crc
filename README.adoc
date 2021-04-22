@@ -308,7 +308,8 @@ include::{common-includes}/os-tabs.adoc[]
 
 [.tab_content.mac_section]
 --
-Click the Docker icon in your menu bar, select *Preferences*, and then click *Docker Engine*. If there's an existing JSON object, add the following key/value pair:
+Click the Docker icon in your menu bar, select *Preferences*, and then click *Docker Engine*. 
+If there's an existing JSON object, add the following key/value pair:
 
 [role="command"]
 ----
@@ -326,12 +327,13 @@ If there's no existing JSON object, instead add the following object:
 
 Next, press the *Apply & Restart* button for the the changes to take effect.
 
-To learn more about testing insecure registries, check out this related official https://docs.docker.com/registry/insecure/[Docker documentation]. 
+To learn more about testing insecure registries, check out the official https://docs.docker.com/registry/insecure/[Docker documentation]. 
 --
 
 [.tab_content.windows_section]
 --
-Click the Docker icon in your system tray, select *Settings*, and then click *Docker Engine*. If there's an existing JSON object, add the following key/value pair:
+Click the Docker icon in your system tray, select *Settings*, and then click *Docker Engine*. 
+If there's an existing JSON object, add the following key/value pair:
 
 [role="command"]
 ----
@@ -349,13 +351,14 @@ If there's no existing JSON object, instead add the following object:
 
 Next, press the *Apply & Restart* button for the the changes to take effect. 
 
-To learn more about testing insecure registries, check out this related official https://docs.docker.com/registry/insecure/[Docker documentation]. 
+To learn more about testing insecure registries, check out the official https://docs.docker.com/registry/insecure/[Docker documentation]. 
 --
 
 [.tab_content.linux_section]
 --
 
-Open the `/etc/docker/daemon.json` file or create it if it doesn't already exist. If the file already contains a JSON object, add the following key/value pair: 
+Open the `/etc/docker/daemon.json` file or create it if it doesn't already exist. 
+If the file already contains a JSON object, add the following key/value pair: 
 
 [role="command"]
 ----
@@ -373,11 +376,13 @@ If the file doesn't already contain a JSON object, instead add the following obj
 
 Next, restart Docker for the changes to take effect.
 
-To learn more about testing insecure registries, check out this related official https://docs.docker.com/registry/insecure/[Docker documentation]. 
+To learn more about testing insecure registries, check out the official https://docs.docker.com/registry/insecure/[Docker documentation]. 
 --
 
-You can store your Docker credentials in a custom external credential store, which is more secure than using a Docker configuration file. 
-If you're using a custom credential store for securing your registry credentials, or if you're unsure where your credentials are stored, use the following command:
+You can store your Docker credentials in a custom external credential store, 
+which is more secure than using a Docker configuration file. 
+If you're using a custom credential store for securing your registry credentials, 
+or if you're unsure where your credentials are stored, use the following command:
 
 include::{common-includes}/os-tabs.adoc[]
 
@@ -595,12 +600,14 @@ for the `system` and `inventory` services:
 * `http://[system-hostname]/system/properties/`
 * `http://[inventory-hostname]/inventory/systems`
 
-In the first URL, you see a result in JSON format with the system properties of the container JVM. The second URL returns an empty list, 
-which is expected because no system properties are stored in the inventory yet.
+In the first URL, you see a result in JSON format with the system properties of the container JVM. 
+The second URL returns an empty list, which is expected because 
+no system properties are stored in the inventory yet.
 
-Point your browser to the `http://[inventory-hostname]/inventory/systems/[system-hostname]` URL. When you to go this URL, the system
-properties that are taken from the `system` service are automatically stored in the inventory. Revisit the 
-`http://[inventory-hostname]/inventory/systems` URL and you see a new entry.
+Point your browser to the `http://[inventory-hostname]/inventory/systems/[system-hostname]` URL. 
+When you to go this URL, the system properties that are taken from the `system` service are 
+automatically stored in the inventory. 
+Revisit the `http://[inventory-hostname]/inventory/systems` URL and you see a new entry.
 
 // =================================================================================================
 // Testing the microservices
