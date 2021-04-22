@@ -9,7 +9,7 @@
 :projectid: crc-openshift
 :page-layout: guide-multipane
 :page-duration: 45 minutes 
-:page-releasedate: 2019-09-11
+:page-releasedate: 2021-09-11
 :page-description: Explore how to deploy microservices to a local OpenShift cluster running with CodeReady Containers
 :page-tags: ['Kubernetes', 'Docker', 'Cloud'] 
 :page-permalink: /guides/{projectid}
@@ -45,7 +45,7 @@ To learn how to deploy to an OpenShift 4 cluster using operators, see the https:
 
 There are different cloud-based solutions for running your {kube} workloads. 
 With a cloud-based infrastructure, you can focus on developing your microservices without worrying about low-level infrastructure details for deployment. 
-Using a cloud helps you to easily scale and manage your microservices in a high-availability setup.
+Using the cloud let's you easily scale and manage your microservices in a high-availability setup.
 
 {kube} is an open source container orchestrator that automates many tasks that are involved in deploying, managing, and scaling containerized applications. 
 If you would like to learn more about Kubernetes, check out the https://openliberty.io/guides/kubernetes-intro.html[Deploying microservices to Kubernetes^] guide.
@@ -102,6 +102,7 @@ Run the following command to set up your host machine for CodeReady Containers:
 ```
 crc setup
 ```
+
 === Starting the virtual machine
 
 Next, run the following command to start the CodeReady Containers virtual machine and OpenShift Cluster:
@@ -700,7 +701,6 @@ Finally, you can stop and delete the CRC virtual machine by running the followin
 crc stop
 crc delete
 ```
-
 
 // =================================================================================================
 // finish
