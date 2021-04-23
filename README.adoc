@@ -1,4 +1,4 @@
-// Copyright (c) 2019, 2021 IBM Corporation and others.
+// Copyright (c) 2021 IBM Corporation and others.
 // Licensed under Creative Commons Attribution-NoDerivatives
 // 4.0 International (CC BY-ND 4.0)
 //   https://creativecommons.org/licenses/by-nd/4.0/
@@ -45,7 +45,7 @@ To learn how to deploy to an OpenShift 4 cluster using operators, see the https:
 
 There are different cloud-based solutions for running your {kube} workloads. 
 With a cloud-based infrastructure, you can focus on developing your microservices without worrying about low-level infrastructure details for deployment. 
-Using the cloud let's you easily scale and manage your microservices in a high-availability setup.
+Using the cloud allows you to easily scale and manage your microservices in a high-availability setup.
 
 {kube} is an open source container orchestrator that automates many tasks that are involved in deploying, managing, and scaling containerized applications. 
 If you would like to learn more about Kubernetes, check out the https://openliberty.io/guides/kubernetes-intro.html[Deploying microservices to Kubernetes^] guide.
