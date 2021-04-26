@@ -64,9 +64,9 @@ documentation].
 
 The two microservices you'll deploy are called `system` and `inventory`. 
 The `system` microservice returns the JVM system properties of the running container. 
-It also returns the pod’s name in the HTTP header, making replicas easy to distinguish 
-from each other. The `inventory` microservice adds the properties from the `system` microservice 
-to the inventory. This process demonstrates how communication can be established between pods inside a cluster.
+It also returns the pod’s name in the HTTP header, making replicas more distinguishable from each other.
+The `inventory` microservice adds the properties from the `system` microservice to the inventory. 
+This process demonstrates how communication can be established between pods inside a cluster.
 
 // =================================================================================================
 // Prerequisites
@@ -619,7 +619,7 @@ The second URL returns an empty list, which is expected because
 no system properties are stored in the inventory yet.
 
 Point your browser to the `http://[inventory-hostname]/inventory/systems/[system-hostname]` URL. 
-When you to go this URL, the system properties that are taken from the `system` service are 
+When you go to this URL, the system properties that are taken from the `system` service are 
 automatically stored in the inventory. 
 Revisit the `http://[inventory-hostname]/inventory/systems` URL and you see a new entry.
 
