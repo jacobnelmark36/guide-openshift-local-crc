@@ -40,15 +40,20 @@ Explore how to deploy microservices to a local OpenShift cluster running with Co
 
 == What you'll learn 
 
-You'll learn how to deploy two microservices in Open Liberty containers to an OpenShift 4 cluster running locally on your computer using CodeReady Containers.
-To learn how to deploy to an OpenShift 4 cluster using operators, see the https://openliberty.io/guides/cloud-openshift-operator.html[Deploying microservices to OpenShift by using Kubernetes Operators^] guide. 
+You'll learn how to deploy two microservices in Open Liberty containers to an OpenShift 4 cluster 
+running locally on your computer using CodeReady Containers.
+To learn how to deploy to an OpenShift 4 cluster using operators, see the 
+https://openliberty.io/guides/cloud-openshift-operator.html[Deploying microservices to OpenShift by using Kubernetes Operators^] guide. 
 
 There are different cloud-based solutions for running your {kube} workloads. 
-With a cloud-based infrastructure, you can focus on developing your microservices without worrying about low-level infrastructure details for deployment. 
+With a cloud-based infrastructure, you can focus on developing your microservices without worrying 
+about low-level infrastructure details for deployment. 
 Using the cloud allows you to easily scale and manage your microservices in a high-availability setup.
 
-{kube} is an open source container orchestrator that automates many tasks that are involved in deploying, managing, and scaling containerized applications. 
-If you would like to learn more about Kubernetes, check out the https://openliberty.io/guides/kubernetes-intro.html[Deploying microservices to Kubernetes^] guide.
+{kube} is an open source container orchestrator that automates many tasks that are involved in deploying, 
+managing, and scaling containerized applications. 
+If you would like to learn more about Kubernetes, 
+check out the https://openliberty.io/guides/kubernetes-intro.html[Deploying microservices to Kubernetes^] guide.
 
 Red Hat CodeReady Containers is a tool that allows you to quickly build and run
 a minimal OpenShift 4 cluster on your local computer. This simplifies setup 
@@ -287,7 +292,8 @@ build log for any potential errors.
 
 === Pushing the images to OpenShift's internal registry
 
-In order to run the microservices on the cluster, you need to push the microservice images into a container image registry. 
+In order to run the microservices on the cluster, 
+you need to push the microservice images into a container image registry. 
 You'll use OpenShift's integrated container image registry called OpenShift Container Registry (OCR). 
 After your images are pushed into the registry, you can use them in the pods you create later in the guide.
 
@@ -323,7 +329,8 @@ If there's no existing JSON object, instead add the following object:
 
 Next, press the *Apply & Restart* button for the the changes to take effect.
 
-To learn more about testing insecure registries, check out the official https://docs.docker.com/registry/insecure/[Docker documentation]. 
+To learn more about testing insecure registries, 
+check out the official https://docs.docker.com/registry/insecure/[Docker documentation]. 
 --
 
 [.tab_content.windows_section]
@@ -347,7 +354,8 @@ If there's no existing JSON object, instead add the following object:
 
 Next, press the *Apply & Restart* button for the the changes to take effect. 
 
-To learn more about testing insecure registries, check out the official https://docs.docker.com/registry/insecure/[Docker documentation]. 
+To learn more about testing insecure registries, 
+check out the official https://docs.docker.com/registry/insecure/[Docker documentation]. 
 --
 
 [.tab_content.linux_section]
@@ -372,7 +380,8 @@ If the file doesn't already contain a JSON object, instead add the following obj
 
 Next, restart Docker for the changes to take effect.
 
-To learn more about testing insecure registries, check out the official https://docs.docker.com/registry/insecure/[Docker documentation]. 
+To learn more about testing insecure registries, 
+check out the official https://docs.docker.com/registry/insecure/[Docker documentation]. 
 --
 
 You can store your Docker credentials in a custom external credential store, 
@@ -392,7 +401,8 @@ echo $(oc whoami -t) | docker login -u developer --password-stdin $(oc registry 
 
 [.tab_content.windows_section]
 --
-Because the Windows command prompt doesn’t support the command substitution that is displayed for Mac and Linux, run the following commands: 
+Because the Windows command prompt doesn’t support the command substitution that is displayed for Mac and Linux, 
+run the following commands: 
 [role=command]
 ```
 oc whoami
@@ -576,8 +586,8 @@ kubernetes.yaml
 include::finish/kubernetes.yaml[]
 ----
 
-Both the [hotspot=systemRoute]`system` and [hotspot=inventoryRoute]`inventory` routes are configured in the [hotspot]`kubernetes.yaml` 
-file, and running the `oc apply -f kubernetes.yaml` command exposed both services.
+Both the [hotspot=systemRoute]`system` and [hotspot=inventoryRoute]`inventory` routes are configured in the 
+[hotspot]`kubernetes.yaml` file, and running the `oc apply -f kubernetes.yaml` command exposed both services.
 
 Your microservices can now be accessed through the hostnames that you can find by running the following command:
 
