@@ -59,8 +59,7 @@ Red Hat CodeReady Containers is a tool that allows you to quickly build and run
 a minimal OpenShift 4 cluster on your local computer. This simplifies setup 
 and testing while providing all of tools needed to develop container-based
 applications. To read more about CodeReady Containers, check out the
-https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.23/html/getting_started_guide/index[official
-documentation].
+https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.23/html/getting_started_guide/index[official documentation^].
 
 The two microservices you'll deploy are called `system` and `inventory`. 
 The `system` microservice returns the JVM system properties of the running container. 
@@ -600,7 +599,7 @@ oc get routes
 ```
 
 The routes can also be found in the web console.
-The web console URL is similar to `https://console-openshift-console.apps-crc.testing` and was given as part of
+The web console URL is similar to `console-openshift-console.apps-crc.testing` and was given as part of
 the output of the `crc start` command at the start of the guide. 
 When you access the web console, log in using the administrator account credentials. 
 After logging in, you can view the routes by navigating to the `Networking > Routes` page on the left. 
