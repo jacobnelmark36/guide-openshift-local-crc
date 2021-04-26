@@ -81,7 +81,7 @@ Kubernetes supports various container types, but you'll use Docker in this guide
 For installation instructions, refer to the official https://docs.docker.com/get-docker/[Docker documentation^].
 
 * *CodeReady Containers:* You need to install CodeReady Containers (CRC) to run
-OpenShift 4 locally on your computer. For installation instructions refer to the
+OpenShift 4 locally on your computer. For installation instructions, refer to the
 official https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.23/html/getting_started_guide/installation_gsg[CodeReady Containers documentation].   
 
 // =================================================================================================
@@ -139,7 +139,7 @@ Log in as user:
   Password: developer
 ----
 
-Save this output as you will need it later in this guide. 
+Save this output as it may be required later in this guide. 
 
 === Logging in to the cluster 
 
@@ -242,9 +242,10 @@ push them to a container registry, and then deploy them to your {kube} cluster.
 The first step of deploying to {kube} is to build your microservices and containerize them.
 
 The starting Java project, which is located in the start directory, is a multi-module Maven project. 
-It is made up of the `system` and `inventory` microservices. Each microservice resides in its own directory,
-`start/system` or `start/inventory`. Both of these directories contain a Dockerfile, which is necessary
-for building the Docker images. See the https://openliberty.io/guides/containerize.html[Containerizing microservices^] 
+It's made up of the `system` and `inventory` microservices. 
+Each microservice resides in its own directory, `start/system` and `start/inventory` respectively. 
+Both of these directories contain a Dockerfile, which is necessary for building the Docker images. 
+See the https://openliberty.io/guides/containerize.html[Containerizing microservices^] 
 guide if you're unfamiliar with Dockerfiles.
 
 If you're familiar with Maven and Docker, you might be tempted to run a Maven build first and then
@@ -330,7 +331,7 @@ If there's no existing JSON object, instead add the following object:
 }
 ----
 
-Next, press the *Apply & Restart* button for the the changes to take effect.
+Next, press the *Apply & Restart* button for the changes to take effect.
 
 To learn more about testing insecure registries, 
 check out the official https://docs.docker.com/registry/insecure/[Docker documentation]. 
@@ -355,7 +356,7 @@ If there's no existing JSON object, instead add the following object:
 }
 ----
 
-Next, press the *Apply & Restart* button for the the changes to take effect. 
+Next, press the *Apply & Restart* button for the changes to take effect. 
 
 To learn more about testing insecure registries, 
 check out the official https://docs.docker.com/registry/insecure/[Docker documentation]. 
@@ -602,7 +603,7 @@ The routes can also be found in the web console.
 The web console URL is similar to `https://console-openshift-console.apps-crc.testing` and was given as part of
 the output of the `crc start` command at the start of the guide. 
 When you access the web console, log in using the administrator account credentials. 
-Once you're logged in, you can view the routes by navigating to the `Networking > Routes` page on the left. 
+After logging in, you can view the routes by navigating to the `Networking > Routes` page on the left. 
 Hostnames are in the `inventory-route-my-project.apps-crc.testing` format and are in the `Location` column.
 Ensure that you're in your project, not the `default` project, 
 which is shown in the upper-left corner of the web console.
