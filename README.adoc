@@ -132,17 +132,13 @@ Log in as administrator:
 Log in as user:
   Username: developer
   Password: developer
-
-Use the 'oc' command line interface:
-  $ eval $(crc oc-env)
-  $ oc login -u developer https://api.crc.testing:6443
 ----
 
 === Logging in to the cluster 
 
 To interact with the OpenShift cluster, you need to use the `oc` command.
-CRC already includes the `oc` binary. To use the `oc` commands, run the
-following command to configure your PATH to include the binary:
+CRC already includes the `oc` binary. 
+To use the `oc` commands, run the following command to see instructions on how to configure your PATH:
 
 [role=command]
 ```
@@ -190,7 +186,7 @@ eval $(crc oc-env)
 --
 [role="no_copy"]
 ----
-SET PATH=C:\Users\JAMIEColeman\.crc\bin\oc;%PATH%
+SET PATH=C:\Users\developer\.crc\bin\oc;%PATH%
 REM Run this command to configure your shell:
 REM     @FOR /f "tokens=*" %i IN ('crc oc-env') DO @call %i
 ----
