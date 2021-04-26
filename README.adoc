@@ -139,6 +139,8 @@ Log in as user:
   Password: developer
 ----
 
+Save this output as you will need it later in this guide. 
+
 === Logging in to the cluster 
 
 To interact with the OpenShift cluster, you need to use the `oc` command.
@@ -211,6 +213,7 @@ Run the following command to log in and gain access to your OpenShift cluster:
 oc login -u developer https://api.crc.testing:6443
 ```
 
+If prompted, use the developer password from when you ran `crc start` earlier.
 Next, create a new OpenShift project with the name `my-project` by running the following command:
 
 [role=command]
@@ -517,11 +520,10 @@ system      default-route-openshift-image-registry.apps.us-west-1.starter.opensh
 Now that your container images are built, deploy them by using a Kubernetes object configuration file.
 
 {kube} objects can be configured in a YAML file that contains a description of all your 
-deployments, services, or any other objects that you want to deploy. All objects can 
-also be deleted from the cluster by using the same YAML file that you used to deploy them. If you're interested 
-in learning more about using and configuring Kubernetes clusters, check out the 
-https://openliberty.io/guides/kubernetes-intro.html[Deploying microservices to Kubernetes^]
-guide.
+deployments, services, or any other objects that you want to deploy. 
+All objects can also be deleted from the cluster by using the same YAML file that you used to deploy them. 
+If you're interested in learning more about using and configuring Kubernetes clusters, check out the 
+https://openliberty.io/guides/kubernetes-intro.html[Deploying microservices to Kubernetes^] guide.
 
 kubernetes.yaml
 [source, yaml, linenums, role="code_column"]
@@ -596,9 +598,14 @@ Your microservices can now be accessed through the hostnames that you can find b
 oc get routes
 ```
 
-They can also be found in the web console by following the `Networking > Routes > Location` path. 
-Hostnames are in the `inventory-route-my-project.apps-crc.testing` format. Ensure that
-you're in your project, not the `default` project, which is shown in the upper-left corner of the web console.
+The routes can also be found in the web console.
+The web console URL is similar to `https://console-openshift-console.apps-crc.testing` and was given as part of
+the output of the `crc start` command at the start of the guide. 
+When you access the web console, log in using the administrator account credentials. 
+Once you're logged in, you can view the routes by navigating to the `Networking > Routes` page on the left. 
+Hostnames are in the `inventory-route-my-project.apps-crc.testing` format and are in the `Location` column.
+Ensure that you're in your project, not the `default` project, 
+which is shown in the upper-left corner of the web console.
 
 Enter the following URLs into your web browser to access your microservices. Substitute the appropriate hostnames
 for the `system` and `inventory` services:
