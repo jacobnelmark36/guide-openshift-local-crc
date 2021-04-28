@@ -9,7 +9,7 @@
 :projectid: crc-openshift
 :page-layout: guide-multipane
 :page-duration: 45 minutes 
-:page-releasedate: 2021-09-11
+:page-releasedate: 2021-05-30
 :page-description: Explore how to deploy microservices to a local OpenShift cluster running with CodeReady Containers
 :page-tags: ['Kubernetes', 'Docker', 'Cloud'] 
 :page-permalink: /guides/{projectid}
@@ -109,7 +109,7 @@ crc setup
 
 === Starting the virtual machine
 
-Next, run the following command to start the CodeReady Containers virtual machine and OpenShift Cluster:
+Next, run the following command to start the CodeReady Containers virtual machine and OpenShift cluster:
 
 [role=command]
 ```
