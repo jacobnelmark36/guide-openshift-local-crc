@@ -331,9 +331,6 @@ If there's no existing JSON object, instead add the following object:
 ----
 
 Next, press the *Apply & Restart* button for the changes to take effect.
-
-To learn more about testing insecure registries, 
-check out the official https://docs.docker.com/registry/insecure/[Docker documentation]. 
 --
 
 [.tab_content.windows_section]
@@ -356,9 +353,6 @@ If there's no existing JSON object, instead add the following object:
 ----
 
 Next, press the *Apply & Restart* button for the changes to take effect. 
-
-To learn more about testing insecure registries, 
-check out the official https://docs.docker.com/registry/insecure/[Docker documentation]. 
 --
 
 [.tab_content.linux_section]
@@ -382,10 +376,10 @@ If the file doesn't already contain a JSON object, instead add the following obj
 ----
 
 Next, restart Docker for the changes to take effect.
+--
 
 To learn more about testing insecure registries, 
 check out the official https://docs.docker.com/registry/insecure/[Docker documentation]. 
---
 
 You can store your Docker credentials in a custom external credential store, 
 which is more secure than using a Docker configuration file. 

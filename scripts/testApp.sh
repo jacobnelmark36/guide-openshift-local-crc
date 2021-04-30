@@ -10,7 +10,6 @@ set -euxo pipefail
 # LMP 3.0+ goals are listed here: https://github.com/OpenLiberty/ci.maven#goals
 export HOSTNAME=localhost
 
-
 ## Rebuild the application
 mvn -q clean package 
 mvn -pl system liberty:create 
