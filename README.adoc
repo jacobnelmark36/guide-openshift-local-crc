@@ -531,8 +531,7 @@ include::finish/kubernetes.yaml[]
 ----
 
 [role="edit_command_text"]
-The [hotspot=systemImage hotspot=inventoryImage]`image` is the name and tag of the container image that you want 
-to use for the container. The image address is the OCR address that you logged in to.
+In this file, the [hotspot=systemImage hotspot=inventoryImage]`image` is the name and tag of the container image that is used the container. The image address is the same OCR address that you logged in to in the previous section.
 
 Run the following commands to deploy the objects as defined in kubernetes.yaml file:
 [role='command']
