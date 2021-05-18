@@ -530,7 +530,6 @@ include::finish/kubernetes.yaml[]
 `kubernetes.yaml`
 ----
 
-[role="edit_command_text"]
 In this file, the [hotspot=systemImage hotspot=inventoryImage]`image` is the name and tag of the container image that is used. 
 The image address is the same OCR address that you logged in to in the previous section.
 
