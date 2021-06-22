@@ -379,7 +379,7 @@ Next, restart Docker for the changes to take effect.
 
 To learn more about testing insecure registries, 
 check out the official https://docs.docker.com/registry/insecure/[Docker documentation].
-Remember to use a secure option for production environments.
+Remember to use a secure registry for production environments.
 
 You can store your Docker credentials in a custom external credential store, 
 which is more secure than using a Docker configuration file. 
