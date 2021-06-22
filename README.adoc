@@ -6,10 +6,10 @@
 // Contributors:
 //     IBM Corporation
 //
-:projectid: crc-openshift
+:projectid: openshift-codeready-containers
 :page-layout: guide-multipane
 :page-duration: 45 minutes 
-:page-releasedate: 2021-05-30
+:page-releasedate: 2021-06-22
 :page-description: Explore how to deploy microservices to a local OpenShift cluster running with CodeReady Containers
 :page-tags: ['Kubernetes', 'Docker', 'Cloud'] 
 :page-permalink: /guides/{projectid}
