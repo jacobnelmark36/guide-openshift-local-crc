@@ -1,0 +1,14 @@
+{{- if .Values.route.enabled -}}
+{{- $fullName := include "system-chart.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: {{ $fullName }}
+  labels:
+    {{- include "system-chart.labels" . | nindent 4 }}
+spec:
+  to:
+    kind: Service
+    name: {{ $fullName }}
+{{- end }}
