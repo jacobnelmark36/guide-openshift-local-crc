@@ -14,5 +14,5 @@
 
   <httpEndpoint host="*" httpPort="${http.port}" httpsPort="${https.port}" id="defaultHttpEndpoint"/>
 
-  <webApplication location="guide-openshift-codeready-containers-inventory.war" contextRoot="/"/>
+  <webApplication location="guide-openshift-local-crc-inventory.war" contextRoot="/"/>
 </server>

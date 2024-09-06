@@ -1,3 +1,15 @@
+FROM maven:3.9.9-ibm-semeru-11-focal AS build
+
+USER 0
+
+WORKDIR /tmp/app
+
+COPY src/ src/
+
+COPY pom.xml pom.xml
+
+RUN mvn package
+
 FROM icr.io/appcafe/open-liberty:kernel-slim-java11-openj9-ubi
 
 ARG VERSION=1.0
@@ -18,5 +30,5 @@ LABEL \
 
 COPY --chown=1001:0 src/main/liberty/config /config/
 RUN features.sh
-COPY --chown=1001:0 target/guide-openshift-codeready-containers-inventory.war /config/apps
+COPY --from=build --chown=1001:0 /tmp/app/target/guide-openshift-local-crc-inventory.war /config/apps
 RUN configure.sh
