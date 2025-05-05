@@ -67,3 +67,5 @@ You specify the features you need, along with any additions or overrides to the 
 ### Customizing the Liberty environment
 
 **Link:** https://www.ibm.com/docs/en/was-liberty/base?topic=liberty-customizing-environment
+
+**Link:** https://openliberty.io/docs/latest/reference/config/server-configuration-overview.html#server-xml
